@@ -1,0 +1,90 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Mental Math</title>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="center col-12 col-md-8">
+				<h1>GAB</h1>
+				<h2>Escolha sua nave</h2>
+				<div name="geral">
+					<div name="naves" class="row">
+						<div name="coluna1" class="col-3">
+							<div name="nave" class="col-12">
+								<img class="center" src="src/nave1.png">
+							</div>
+							<div name="operator" class="col-12">
+								<button type="button" class="btn btn-primary btn-block" id="sum">+</button>
+							</div>
+						</div>
+						<div name="coluna2" class="col-3">
+							<div name="nave2" class="col-12">
+								<img class="center" src="src/nave2.png">
+							</div>
+							<div name="operator" class="col-12">
+								<button type="button" class="btn btn-primary btn-block" id="sub">-</button>
+							</div>
+						</div>
+						<div name="coluna3" class="col-3">
+							<div name="nave3" class="col-12">
+								<img class="center" src="src/nave3.png">
+							</div>
+							<div name="operator" class="col-12">
+								<button type="button" class="btn btn-primary btn-block" id="mul">&times</button>
+							</div>
+						</div>
+						<div name="coluna4" class="col-3">
+							<div name="nave4" class="col-12">
+								<img class="center" src="src/nave4.png">
+							</div>
+							<div name="operator" class="col-12">
+								<button type="button" class="btn btn-primary btn-block" id="div">&divide</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<p>
+						<span id="p"></span> <span id="op"></span> <span id="q"></span>
+					</p>
+					<p id="response"></p>
+					<p id="results"></p>
+					<p id="category"></p>
+				</div>
+				<div class="controls">
+					<form>
+						<input type="text" name="answer" id="in" autocomplete="off">
+					</form>
+					<button id="start" class="center btn btn-primary">START</button>
+					<button id="stop" class="center btn btn-primary">STOP</button>
+				</div>
+			</div>
+			<!-- <div class="col-6 col-md-4">
+				<h1>oioi</h1>
+			</div> -->
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/math.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
