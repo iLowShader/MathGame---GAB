@@ -1,139 +1,49 @@
 /***** ELEMENTS *****/
-var startButton = document.getElementById("start");
-var stopButton = document.getElementById("stop");
-var inputField = document.getElementById("in");
-var form = document.querySelector("form");
-var p = document.getElementById("p");
-var q = document.getElementById("q");
-var op = document.getElementById("op");
-var response = document.getElementById("response"); // used for Try Again text
-var results = document.getElementById("results");
-var category = document.getElementById("category");
 var sum = document.getElementById("sum");
 var sub = document.getElementById("sub");
 var mul = document.getElementById("mul");
 var div = document.getElementById("div");
+var readyMessage = document.getElementById("readyMessage");
+var startButton1 = document.getElementById("start1");
 
 /***** STATE VARIABLES *****/
-var max = 20;
-var num1;
-var num2;
-var answer;
-
-var startTime;
-var endTime;
-
-var count; // number of correct answers
-var times = [];
-var loses = 0;
+var op_aux = "";
+var lives;
+var nave_in;
 
 /***** INITIALIZING *****/
-inputField.className = "hide";
-stopButton.className = "hide";
+img.className = "hide";
+start1.className = "hide";
 
 /***** EVENTS *****/
 sum.onclick = function () {
-	
-}
-
-startButton.onclick = function () {
-	// initializing the count
-	count = 0;
-	times = [];
-	results.innerHTML = ""; // clear results
-	category.innerHTML = ""; // clear category
-	refreshNums();
-	inputField.className = ""; // show the input field
-	stopButton.className = ""; // show the stop button
-	startButton.className = "hide"; // hide the start button
-	inputField.focus();
+    localStorage.setItem("op_aux", "+");
+    localStorage.setItem("nave_in", "src/nave1.png")
+    readyMessage.className = "";
+    readyMessage.innerHTML = "Operação de SOMA selecionada.<br/> Pronto para começar?";
+    start1.className = "btn btn-primary";
 };
 
-form.onsubmit = function (e) {
-	// need to prevent the default form submission wich reloads the page
-	e.preventDefault();
-	getAnswer();
+sub.onclick = function () {
+    localStorage.setItem("op_aux", "-");
+    localStorage.setItem("nave_in", "src/nave2.png")
+    readyMessage.className = "";
+    readyMessage.innerHTML = "Operação de SUBTRAÇÃO selecionada.<br/> Pronto para começar?";
+    start1.className = "btn btn-primary";
 };
 
-stopButton.onclick = function () {
-	var resultString;
-	var categoryString;
-	if (times.length > 0) {
-		// getting mean time
-		var total = 0;
-		for (var i = 0; i < times.length; i++) {
-			total += times[i];
-		}
-		var mean = (total / times.length) / 1000;
-		resultString = "Average time: " + mean.toPrecision(4) + " sec";
-		categoryString = getCategory(mean);
-		console.log(loses);
-	} else {
-		resultString = "No results recorded. Hit the Enter key to submit your answers.";
-		categoryString = "";
-	}
-
-	inputField.className = "hide"; // hide the input field
-	stopButton.className = "hide"; // hide the stop button
-	startButton.className = ""; // show the start button
-
-	// clear numbers and present results
-	p.innerHTML = "";
-	q.innerHTML = "";
-	op.innerHTML = "";
-	response.innerHTML = ""; // clear response in case it was set
-	results.innerHTML = resultString;
-	category.innerHTML = categoryString;
+mul.onclick = function () {
+    localStorage.setItem("op_aux", "&times");
+    localStorage.setItem("nave_in", "src/nave3.png")
+    readyMessage.className = "";
+    readyMessage.innerHTML = "Operação de MULTIPLICAÇÃO selecionada.<br/> Pronto para começar?";
+    start1.className = "btn btn-primary";
 };
 
-/***** FUNCTIONS ******/
-var refreshNums = function () {
-	// Getting some random numbers
-	num1 = Math.floor((Math.random() * max) + 1);
-	num2 = Math.floor((Math.random() * max) + 1);
-	// Printing numbers to user
-	p.innerHTML = num1;
-	op.innerHTML = "+";
-	q.innerHTML = num2;
-	// Starting timer
-	startTime = new Date();
-};
-
-/*
-* This is called in the onsubmit event
-*/
-var getAnswer = function () {
-	var correct = num1 + num2;
-	// Getting the users attempt
-	answer = parseInt(inputField.value);
-
-	if (answer === correct) {
-		// Stopping the timer and adding the time to the times array
-		endTime = new Date();
-		times[count++] = endTime.getTime() - startTime.getTime();
-		// the answer was correct, so no need for "Try Again"
-		response.innerHTML = "";
-		refreshNums();
-	} else {
-		loses++;
-		response.innerHTML = "Try Again";
-	}
-	// clear the input field for the next round
-	inputField.value = "";
-};
-
-var getCategory = function (mean) {
-	var c;
-	if (mean < 2) {
-		c = "Human Computer";
-	} else if (mean < 4) {
-		c = "Math Wiz";
-	} else if (mean < 7) {
-		c = "B Student";
-	} else if (mean < 10) {
-		c = "Probably Drunk";
-	} else {
-		c = "High School Drop Out";
-	}
-	return c;
+div.onclick = function (){
+    localStorage.setItem("op_aux", "&divide");
+    localStorage.setItem("nave_in", "src/nave4.png")
+    readyMessage.className = "";
+    readyMessage.innerHTML = "Operação de DIVISÃO selecionada.<br/> Pronto para começar?";
+    start1.className = "btn btn-primary";
 };

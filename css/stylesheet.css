@@ -1,88 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+
 body {
-	font-family: sans-serif;
-	text-align: center;
-	color: #333;
+    font-family: sans-serif;
+    text-align: center;
+    color: #333;
+    background-image: url(../src/bg.jpg);
+    background-size: cover;
 }
 
 h1 {
-	text-align: center;
-	font-size: 4em;
+    text-align: center;
+    font-size: 4em;
 }
 
 h2 {
-	text-align: center;
-	font-size: 2em;
+    text-align: center;
+    font-size: 2em;
+}
+
+h3 {
+    text-align: center;
 }
 
 input {
-	font-size: 72px;
-	max-width: 100%;
-	border: none;
-	border-radius: 10px;
-	background-color: #E6E6E6;
-	text-align: center;
+    font-size: 72px;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(167, 167, 167);
+    text-align: center;
 }
 
 input:focus {
-	outline: none;
+    outline: none;
 }
 
-/* button {
-	align-self: center;
-	display: block;
-	cursor: pointer;
-	width: 200px;
-	height: 120px;
-	color: white;
-	font-size: 22px;
-	border: 6px solid #000000;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 20px;
-} */
-
 p {
-	text-align: center;
-	font-size: 22px;
+    text-align: center;
+    font-size: 22px;
 }
 
 p span {
-	font-size: 96px;
+    font-size: 96px;
 }
 
-/* .container {
-	margin:  auto;
-	width: 420px;
-} */
-
 .controls {
-	position: relative;
-	margin: 0 auto;
-	width: 270px;
+    position: relative;
+    margin: 0 auto;
+    width: 270px;
 }
 
 .hide {
-	display: none; /* default value that is changed via javascript */
+    display: none;
+    /* default value that is changed via javascript */
 }
 
-.center{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+.ocult {
+    display: hidden;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* .lifes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+} */
+
+.gameBackGround {
+    margin-top: 20px;
+    background: black;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: rgb(60, 180, 216);
+}
+
+.navesback {
+    border-style: solid;
+    border-color: #9199A3;
+    border-width: 10px;
+    background: #FFED41;
+    padding: 3%;
+}
+
+.gameback {
+    border-style: solid;
+    border-color: #9199A3;
+    border-width: 10px;
+    background: #FFED41;
+    padding: 3%;
+}
+
+.bg {
+    margin-top: 20px;
+    background: #FFFFFF;
+    min-height: 530px;
+}
+
+.rotated {
+    transform: rotate(135deg);
+}
+
+#div {
+    font-size: 2rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0D1C52;
+}
+
+#mul {
+    font-size: 2rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0D1C52;
+}
+
+#sub {
+    font-size: 2rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0D1C52;
+}
+
+#sum {
+    font-size: 2rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0D1C52;
+}
+
+#bn {
+    background: #23E845;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #0D1C52;
 }
 
 #response {
-	color: #FF6666;
+    color: #FF6666;
+}
+
+#rn {
+    color: #00F8A0;
+}
+
+#rm {
+    color: #FFED41;
+}
+
+#rk {
+    color: #FF6666;
 }
 
 #start {
-	background-color: #00F8A0;
-	border-color: #00F8A0;
+    background-color: #00F8A0;
+    border-color: #00F8A0;
 }
 
 #stop {
-	background-color: #FF6666;
-	border-color: #FF6666;
-	margin-top: 40px;
+    background-color: #FF6666;
+    border-color: #FF6666;
+    margin-top: 40px;
+}
+
+#choose {
+    font-family: 'Righteous', cursive;
+    color: #1054E8;
+}
+
+#titulo{
+    font-family: 'Fredoka One', cursive;
+    color: rgb(24, 182, 127);
+    border-bottom: 2px solid #FF6666;
+}
+
+#questao {
+    font-family: 'Righteous', cursive;
+    color: rgb(0, 149, 218);
+    border-bottom: 2px solid #FF6666;
+}
+
+#lif{
+    font-family: 'Righteous', cursive;
+    color: rgb(248, 54, 54);
+}
+
+#select{
+    font-family: 'Fredoka One', cursive;
+    color: rgb(0, 149, 218);
+}
+
+#readyMessage{
+    font-family: 'Fredoka One', cursive;
+    color: rgb(0, 149, 218);
+}
+
+#wrong{
+    color: #FF6666;
+    font-size: 1em;
+}
+
+#result{
+    font-family: 'Fredoka One', cursive;
+}
+
+#h{
+    font-family: 'Fredoka One', cursive;
+    color: rgb(0, 184, 31);
+}
+
+#bggame{
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: rgb(16, 43, 102);
+}
+
+#backvida{
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: rgb(16, 43, 102);
+}
+
+#certa{
+    color: rgb(0, 184, 31);
+    font-size: 1em;
 }
